@@ -30,6 +30,69 @@
     </header>
 
     <main class="page-main">
+      <section class="filters">
+        <h2 class="visually-hidden">Фильтрация по странам</h2>
+        <form class="filter" method="get" action="https://echo.htmlacademy.ru">
+          <h3>Подберите идеального попутчика</h3>
+          <fieldset class="hobby">
+            <legend>Хобби</legend>
+            <span>развернуть</span>
+          </fieldset>
+          <fieldset class="music">
+            <legend>Музыка</legend>
+            <span>свернуть</span>
+            <ul class="filter-list">
+              <li class="filter-option">
+                <input class="filter-input filter-input-checkbox" type="checkbox" name="hardrock" id="filter-rock" checked>
+                <label for="filter-rock">Тяжелый рок</label>
+              </li>
+              <li class="filter-option">
+                <input class="filter-input filter-input-checkbox" type="checkbox" name="rap" id="filter-rap">
+                <label for="filter-rap">Русский рэп</label>
+              </li>
+              <li class="filter-option">
+                <input class="filter-input filter-input-checkbox" type="checkbox" name="dance" id="filter-dance">
+                <label for="filter-dance">Евроденс</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="food">
+            <legend>Еда</legend>
+            <span>развернуть</span>
+          </fieldset>
+          <fieldset class="transport">
+            <legend>Транспорт</legend>
+            <span>свернуть</span>
+            <ul class="filter-list">
+              <li class="filter-option">
+                <input class="filter-input filter-input-checkbox" type="checkbox" name="plain" id="filter-plain" checked>
+                <span>plain</span>
+              </li>
+              <li class="filter-option">
+                <input class="filter-input filter-input-checkbox" type="checkbox" name="train" id="filter-train" checked>
+                <span>train</span>
+              </li>
+              <li class="filter-option">
+                <input class="filter-input filter-input-checkbox" type="checkbox" name="bike" id="filter-bike">
+                <span>bike</span>
+              </li>
+              <li class="filter-option">
+                <input class="filter-input filter-input-checkbox" type="checkbox" name="hiking" id="filter-hiking" checked>
+                <span>hiking</span>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="level">
+            <legend>Левел</legend>
+            <span>свернуть</span>
+            <button type="button" class="button">30</button>
+            <button type="button" class="button">100</button><br>
+            <input class="filter-input" type="range" name="level-range" min="0" max="100" step="1"><br>
+          </fieldset>
+          <button type="submit" class="button">Показать</button>
+        </form>
+      </section>
+
       <section class="user-cards">
         <div class="user-cards__wrapper">
           <h2 class="user-cards__title visually-hidden">Выбор попутчика</h2>
