@@ -31,65 +31,165 @@
 
     <main class="page-main">
       <section class="filters">
-        <h2 class="visually-hidden">Фильтрация по странам</h2>
-        <form class="filter" method="get" action="https://echo.htmlacademy.ru">
-          <h3>Подберите идеального попутчика</h3>
-          <fieldset class="hobby">
-            <legend>Хобби</legend>
-            <span>развернуть</span>
-          </fieldset>
-          <fieldset class="music">
-            <legend>Музыка</legend>
-            <span>свернуть</span>
-            <ul class="filter-list">
-              <li class="filter-option">
-                <input class="filter-input filter-input-checkbox" type="checkbox" name="hardrock" id="filter-rock" checked>
-                <label for="filter-rock">Тяжелый рок</label>
+        <div class="country-filtering">
+          <div class="filters__header">
+            <h2 class="country-filtering__title">Фильтрация по странам</h2>
+            <button class="country-filtering__button button"></button>
+          </div>
+          <div class="country-filtering__container">
+            <ul class="country-filtering__region-list">
+              <li class="country-filtering__region-item"><button type="button">Европа</button></li>
+              <li class="country-filtering__region-item"><button type="button">Азия</button></li>
+              <li class="country-filtering__region-item"><button type="button">Америка</button></li>
+              <li class="country-filtering__region-item"><button type="button">Острова</button></li>
+            </ul>
+            <table class="country-filtering__table">
+              <tr>
+                <td><button type="button">А</button></td>
+                <td><button type="button">Б</button></td>
+                <td><button type="button">В</button></td>
+                <td><button type="button">Г</button></td>
+                <td><button type="button">Д</button></td>
+              </tr>
+              <tr>
+                <td><button type="button">Е</button></td>
+                <td><button type="button">З</button></td>
+                <td><button type="button">И</button></td>
+                <td><button type="button">К</button></td>
+                <td><button type="button">Л</button></td>
+              </tr>
+              <tr>
+                <td><button type="button">М</button></td>
+                <td><button type="button">Н</button></td>
+                <td><button type="button">О</button></td>
+                <td><button type="button">П</button></td>
+                <td><button type="button">Р</button></td>
+              </tr>
+              <tr>
+                <td><button type="button">С</button></td>
+                <td><button type="button">Т</button></td>
+                <td><button type="button">У</button></td>
+                <td><button type="button">Ф</button></td>
+                <td><button type="button">Х</button></td>
+              </tr>
+              <tr>
+                <td><button type="button">Ч</button></td>
+                <td><button type="button">Ш</button></td>
+                <td><button type="button">Э</button></td>
+                <td><button type="button">Ю</button></td>
+                <td><button type="button">Я</button></td>
+              </tr>
+            </table>
+            <ul class="country-filtering__list">
+              <li><a href="#">Афганистан</a></li>
+              <li><a href="#">Албания</a></li>
+              <li><a href="#">Алжир</a></li>
+              <li><a href="#">Андорра</a></li>
+              <li><a href="#">Аргентина</a></li>
+              <li><a href="#">Армения</a></li>
+              <li><a href="#">Австралия</a></li>
+              <li><a href="#">Австрия</a></li>
+              <li><a href="#">Азербайджан</a></li>
+            </ul>
+            <button class="button">Свернуть</button>
+          </div>
+        </div>
+        <form class="traveller-search" method="get" action="https://echo.htmlacademy.ru">
+          <h2 class="traveller-search__title">Подберите идеального попутчика</h2>
+          <fieldset class="traveller-search__item">
+            <legend class="traveller-search__item-title">Хобби</legend>
+            <button type="button" class="expand-button button">развернуть</button>
+            <ul class="traveller-search__list">
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="gym" id="gym" checked>
+                <label for="gym">Спортзал</label>
               </li>
-              <li class="filter-option">
-                <input class="filter-input filter-input-checkbox" type="checkbox" name="rap" id="filter-rap">
-                <label for="filter-rap">Русский рэп</label>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="hookah" id="hookah">
+                <label for="hookah">Кальян</label>
               </li>
-              <li class="filter-option">
-                <input class="filter-input filter-input-checkbox" type="checkbox" name="dance" id="filter-dance">
-                <label for="filter-dance">Евроденс</label>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="sofa" id="sofa">
+                <label for="sofa">Диван</label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="food">
-            <legend>Еда</legend>
-            <span>развернуть</span>
-          </fieldset>
-          <fieldset class="transport">
-            <legend>Транспорт</legend>
-            <span>свернуть</span>
-            <ul class="filter-list">
-              <li class="filter-option">
-                <input class="filter-input filter-input-checkbox" type="checkbox" name="plain" id="filter-plain" checked>
-                <span>plain</span>
+
+          <fieldset class="traveller-search__item">
+            <legend class="traveller-search__title">Музыка</legend>
+            <button type="button" class="collapse-button button">свернуть</button>
+            <ul class="traveller-search__list">
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="hardrock" id="rock" checked>
+                <label for="rock">Тяжелый рок</label>
               </li>
-              <li class="filter-option">
-                <input class="filter-input filter-input-checkbox" type="checkbox" name="train" id="filter-train" checked>
-                <span>train</span>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="rap" id="rap">
+                <label for="rap">Русский рэп</label>
               </li>
-              <li class="filter-option">
-                <input class="filter-input filter-input-checkbox" type="checkbox" name="bike" id="filter-bike">
-                <span>bike</span>
-              </li>
-              <li class="filter-option">
-                <input class="filter-input filter-input-checkbox" type="checkbox" name="hiking" id="filter-hiking" checked>
-                <span>hiking</span>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="dance" id="dance">
+                <label for="dance">Евроденс</label>
               </li>
             </ul>
           </fieldset>
-          <fieldset class="level">
-            <legend>Левел</legend>
-            <span>свернуть</span>
-            <button type="button" class="button">30</button>
-            <button type="button" class="button">100</button><br>
-            <input class="filter-input" type="range" name="level-range" min="0" max="100" step="1"><br>
+
+          <fieldset class="traveller-search__item">
+            <legend class="traveller-search__title">Еда</legend>
+            <button type="button" class="expand-button button">развернуть</button>
+            <ul class="traveller-search__list">
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="meat-eater" id="meat-eater" checked>
+                <label for="meat-eater">Мясоед</label>
+              </li>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="healthy-eater" id="healthy-eater">
+                <label for="healthy-eater">Сидит на ПП</label>
+              </li>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="raw-vegan" id="raw-vegan">
+                <label for="raw-vegan">Веган-сыроед</label>
+              </li>
+            </ul>
           </fieldset>
-          <button type="submit" class="button">Показать</button>
+
+          <fieldset class="traveller-search__item">
+            <legend class="traveller-search__title">Транспорт</legend>
+            <button type="button" class="collapse-button button">свернуть</button>
+            <ul class="traveller-search__list">
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="plain" id="plain" checked>
+                <label for="plain">plain</label>
+              </li>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="train" id="train" checked>
+                <label for="train">train</label>
+              </li>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="bike" id="bike">
+                <label for="bike">bike</label>
+              </li>
+              <li class="traveller-search__option">
+                <input class="traveller-search__input traveller-search__input-checkbox" type="checkbox" name="hiking" id="hiking" checked>
+                <label for="hiking">hiking</label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset class="traveller-search__item">
+            <legend class="traveller-search__title">Левел</legend>
+            <button type="button" class="collapse-button button">свернуть</button>
+            <div class="level__interval">
+              <input type="text" name="min-interval" value="30">
+              <input type="text" name="max-interval" value="100">
+            </div>
+            <div class="level__range-scale">
+              <button class="level__value level__value--min"></button>
+              <button class="level__value level__value--max"></button>
+              <div class="level__bar"></div>
+            </div>
+          </fieldset>
+          <button type="submit" class="traveller-search__button button">Показать</button>
         </form>
       </section>
 

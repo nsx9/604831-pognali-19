@@ -184,27 +184,27 @@
         </div>
       </section>
 
-      <section class="authorization">
-        <h2 class="visually-hidden">Авторизация</h2>
-        <span>Заинтересовались?</span>
-        <p>Зарегистрируйтесь, это быстро и бесплатно! Уже зарегистрированы? тогда скорее <a href="#">авторизуйтесь</a></p>
-        <form class="registration-form" action="https://echo.htmlacademy.ru" method="post">
+      <section class="contacts">
+        <h2 class="contacts__title">Заинтересовались?</h2>
+        <p>Зарегистрируйтесь, это быстро и бесплатно! Уже зарегистрированы? тогда скорее
+          <a class="contacts__link" href="#">авторизуйтесь</a>
+        </p>
+        <form class="contacts__form" action="https://echo.htmlacademy.ru" method="post">
           <input type="text" name="email" id="email" placeholder="E-mail">
-          <button type="submit">Регистрация</button>
+          <button class="contacts__button" type="submit">Регистрация</button>
         </form>
         <p>Остались вопросы? Мы с радостью на них ответим!</p>
-        <span>Позвонить</span>
-        <a class="authorization__call-link" href="#">8 800 555-86-28</a>
-        <span>Написать</span>
-        <a class="authorization__mail-link" href="#">mail@htmlacademy.ru</a>
-      </section>
-
-      <section class="route">
-        <h2 class="visually-hidden">Проложить маршрут</h2>
-        <p>ул. Большая Конюшенная 19/8</p>
-        <a href="https://yandex.ru/maps/-/CGdNJTm6">Проложить маршрут</a>
-        <div class="map">
-          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1786d2b4dd99fbf189c4c7e069df61a8c75937fe6dff963180b00d41021ba21d&amp;source=constructor" width="320" height="320"></iframe>
+        <span></span>
+        <a class="contacts__call-link" href="tel:88005558628" aria-label="Позвонить">8 800 555-86-28</a>
+        <span></span>
+        <a class="contacts__mail-link" href="mailto:mail@htmlacademy.ru" aria-label="Написать">mail@htmlacademy.ru</a>
+        <div class="route">
+          <h2 class="visually-hidden">Проложить маршрут</h2>
+          <p class="contacts__address">ул. Большая Конюшенная 19/8</p>
+          <a class="contacts__route-link" href="https://yandex.ru/maps/-/CGdNJTm6">Проложить маршрут</a>
+          <div class="contacts__map">
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1786d2b4dd99fbf189c4c7e069df61a8c75937fe6dff963180b00d41021ba21d&amp;source=constructor" width="320" height="320"></iframe>
+          </div>
         </div>
       </section>
     </main>

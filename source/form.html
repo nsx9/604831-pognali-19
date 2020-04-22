@@ -32,20 +32,36 @@
     <main class="page-main">
       <section class="user-profile">
         <h2 class="visually-hidden">Мой профиль</h2>
-        <span>80 level</span>
-        <img class="user-profile__image" src="https://via.placeholder.com/150x150" alt="">
-        <button class="button user-profile__button" type="button">Сменить фото</button>
-        <div class="">
-          <p>Тэги</p>
-          <textarea>#бургер#бар#футбол#концерт#крафт</textarea>
+        <div class="user-profile__level">
+          <span>80</span>
+          <span>level</span>
         </div>
-        <div class="transport">
-          <p>транспорт:</p>
-          <ul>
-            <li class="">plane</li>
-            <li class="">train</li>
-            <li class="">bike</li>
-            <li class="">hiking</li>
+        <img class="user-profile__image" src="https://via.placeholder.com/150x150" alt="">
+        <input class="user-profile__file" type="file" id="photo" name="photo">
+        <label for="photo">Сменить фото</label>
+        <div class="user-profile__block">
+          <h3 class="user-profile__block-title">Тэги</h3>
+          <textarea class="user-profile__tags">#бургер#бар#футбол#концерт#крафт</textarea>
+        </div>
+        <div class="user-profile__block">
+          <h3 class="user-profile__block-title">Транспорт</h3>
+          <ul class="user-profile__list">
+            <li class="user-profile__option">
+              <input class="user-profile__input user-profile__input-checkbox" type="checkbox" name="plain" id="plain" checked>
+              <label for="plain">plane</label>
+            </li>
+            <li class="user-profile__option">
+              <input class="user-profile__input user-profile__input-checkbox" type="checkbox" name="train" id="train" checked>
+              <label for="train">train</label>
+            </li>
+            <li class="user-profile__option">
+              <input class="user-profile__input user-profile__input-checkbox" type="checkbox" name="bike" id="bike">
+              <label for="bike">bike</label>
+            </li>
+            <li class="user-profile__option">
+              <input class="user-profile__input user-profile__input-checkbox" type="checkbox" name="hiking" id="hiking" checked>
+              <label for="hiking">hiking</label>
+            </li>
           </ul>
         </div>
       </section>
@@ -54,13 +70,15 @@
         <h2 class="user-plans__title">Мои планы:</h2>
         <ol class="user-plans__list">
           <li class="user-plans__item">
-            <p>Франция, Италия</p>
-            <p>3 попутчика<br> 26 мар - 29 мар</p>
+            <p class="user-plans__country">Франция, Италия</p>
+            <p class="user-plans__travelers">3 попутчика</p>
+            <p class="user-plans__date">26 мар - 29 мар</p>
             <button class="user-plans__button" type="button">Изменить</button>
           </li>
           <li class="user-plans__item">
-            <p>Тайланд, Индонезия</p>
-            <p>1 попутчик<br> 1 июл - 15 июл</p>
+            <p class="user-plans__country">Тайланд, Индонезия</p>
+            <p class="user-plans__travelers">1 попутчик</p>
+            <p class="user-plans__date">1 июл - 15 июл</p>
             <button class="user-plans__button" type="button">Изменить</button>
           </li>
         </ol>
@@ -70,96 +88,124 @@
         <h2 class="add-plans__title">Добавить план:</h2>
         <div class="add-plans__wrapper slider">
           <p class="add-plans__dot slider__dot">
-            <span class="slider__dot">1</span>
-            <span class="slider__dot">2</span>
-            <span class="slider__dot">3</span>
+            <button class="slider__dot">1</button>
+            <button class="slider__dot">2</button>
+            <button class="slider__dot">3</button>
           </p>
           <form class="add-plans__form" action="https://echo.htmlacademy.ru" method="post">
             <ul class="add-plans__list slider__list">
               <li class="add-plans__item slider__item">Шаг 1.<br>Даты пребывания
-                <p>Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку и ее предполагаемую длительность.</p>
-                <label for="companions-serch-field">Ищу попутчиков:</label>
-                <span>Чел.</span><br>
-                <button class="button-decrease" type="button">-</button>
-                <input type="number" name="companions-serch" id="companions-serch-field" value="2">
-                <button class="button-increase" type="button">+</button><br>
+                <p class="slider__text">Укажите предпочтительное количество попутчиков, которых вы хотели бы позвать в поездку и ее предполагаемую длительность.</p>
+                <label for="companions-serch-field">Ищу попутчиков:<span>Чел.</span></label><br>
+                <button class="add-plans__decrease" type="button">-</button>
+                <input class="companions-input" type="number" name="companions-serch" id="companions-serch-field" value="2">
+                <button class="add-plans__increase" type="button">+</button><br>
                 <label for="duration-field">Длительность:</label>
                 <span>Дн.</span><br>
-                <button class="button-decrease" type="button">-</button>
-                <input type="number" name="duration-field" id="duration-field" value="2">
-                <button class="button-increase" type="button">+</button><br>
-                <input class="input-checkbox" type="checkbox" name="children" id="children" checked><!--классы-->
+                <button class="add-plans__decrease" type="button">-</button>
+                <input class="duration-input" type="number" name="duration-field" id="duration-field" value="2">
+                <button class="add-plans__increase" type="button">+</button>
+                <input class="add-plans__check input-checkbox" type="checkbox" name="children" id="children" checked><!--классы-->
                 <label for="children">Можно с детьми</label>
-                <table class="calendar">
-                  <caption><button class="button-previous" type="button">leftarrow</button>Март 2019<button class="button-next" type="button">rightarrow</button></caption>
+                <table class="add-plans__calendar calendar">
+                  <caption class="calendar__title">
+                    <button class="calendar__button calendar__button--before" type="button">leftarrow</button>
+                    <p class="calendar__month">Март 2019</p>
+                    <button class="calendar__button calendar__button--after" type="button">rightarrow</button>
+                  </caption>
+                  <thead>
+                    <tr>
+                      <td class="calendar__week-day">П</td>
+                      <td class="calendar__week-day">В</td>
+                      <td class="calendar__week-day">С</td>
+                      <td class="calendar__week-day">Ч</td>
+                      <td class="calendar__week-day">П</td>
+                      <td class="calendar__week-day calendar__week-day--day-off">С</td>
+                      <td class="calendar__week-day calendar__week-day--day-off">В</td>
+                    </tr>
+                  </thead>
                   <tr>
-                    <td>П</td>
-                    <td>В</td>
-                    <td>С</td>
-                    <td>Ч</td>
-                    <td>П</td>
-                    <td>С</td>
-                    <td>В</td>
+                    <td class="calendar__date"><button type="button">23</button></td>
+                    <td class="calendar__date"><button type="button">24</button></td>
+                    <td class="calendar__date"><button type="button">25</button></td>
+                    <td class="calendar__date"><button type="button">26</button></td>
+                    <td class="calendar__date"><button type="button">27</button></td>
+                    <td class="calendar__date"><button type="button">28</button></td>
+                    <td class="calendar__date"><button type="button">1</button></td>
                   </tr>
                   <tr>
-                    <td><button type="button">25</button></td>
-                    <td><button type="button">26</button></td>
-                    <td><button type="button">27</button></td>
-                    <td><button type="button">28</button></td>
-                    <td><button type="button">1</button></td>
-                    <td><button type="button">2</button></td>
-                    <td><button type="button">3</button></td>
+                    <td class="calendar__date"><button type="button">2</button></td>
+                    <td class="calendar__date"><button type="button">3</button></td>
+                    <td class="calendar__date"><button type="button">4</button></td>
+                    <td class="calendar__date"><button type="button">5</button></td>
+                    <td class="calendar__date"><button type="button">6</button></td>
+                    <td class="calendar__date"><button type="button">7</button></td>
+                    <td class="calendar__date"><button type="button">8</button></td>
                   </tr>
                   <tr>
-                    <td><button type="button">4</button></td>
-                    <td><button type="button">5</button></td>
-                    <td><button type="button">6</button></td>
-                    <td><button type="button">7</button></td>
-                    <td><button type="button">8</button></td>
-                    <td><button type="button">9</button></td>
-                    <td><button type="button">10</button></td>
+                    <td class="calendar__date"><button type="button">9</button></td>
+                    <td class="calendar__date"><button type="button">10</button></td>
+                    <td class="calendar__date"><button type="button">11</button></td>
+                    <td class="calendar__date"><button type="button">12</button></td>
+                    <td class="calendar__date"><button type="button">13</button></td>
+                    <td class="calendar__date"><button type="button">14</button></td>
+                    <td class="calendar__date"><button type="button">15</button></td>
                   </tr>
                   <tr>
-                    <td><button type="button">11</button></td>
-                    <td><button type="button">12</button></td>
-                    <td><button type="button">13</button></td>
-                    <td><button type="button">14</button></td>
-                    <td><button type="button">15</button></td>
-                    <td><button type="button">16</button></td>
-                    <td><button type="button">17</button></td>
+                    <td class="calendar__date"><button type="button">16</button></td>
+                    <td class="calendar__date"><button type="button">17</button></td>
+                    <td class="calendar__date"><button type="button">18</button></td>
+                    <td class="calendar__date"><button type="button">19</button></td>
+                    <td class="calendar__date"><button type="button">20</button></td>
+                    <td class="calendar__date"><button type="button">21</button></td>
+                    <td class="calendar__date"><button type="button">22</button></td>
                   </tr>
                   <tr>
-                    <td><button type="button">18</button></td>
-                    <td><button type="button">19</button></td>
-                    <td><button type="button">20</button></td>
-                    <td><button type="button">21</button></td>
-                    <td><button type="button">22</button></td>
-                    <td><button type="button">23</button></td>
-                    <td><button type="button">24</button></td>
+                    <td class="calendar__date"><button type="button">23</button></td>
+                    <td class="calendar__date"><button type="button">24</button></td>
+                    <td class="calendar__date"><button type="button">25</button></td>
+                    <td class="calendar__date"><button type="button">26</button></td>
+                    <td class="calendar__date"><button type="button">27</button></td>
+                    <td class="calendar__date"><button type="button">28</button></td>
+                    <td class="calendar__date"><button type="button">29</button></td>
                   </tr>
                   <tr>
-                    <td><button type="button">25</button></td>
-                    <td><button type="button">26</button></td>
-                    <td><button type="button">27</button></td>
-                    <td><button type="button">28</button></td>
-                    <td><button type="button">29</button></td>
-                    <td><button type="button">30</button></td>
-                    <td><button type="button">31</button></td>
+                    <td class="calendar__date"><button type="button">30</button></td>
+                    <td class="calendar__date"><button type="button">31</button></td>
+                    <td class="calendar__date"><button type="button">1</button></td>
+                    <td class="calendar__date"><button type="button">2</button></td>
+                    <td class="calendar__date"><button type="button">3</button></td>
+                    <td class="calendar__date"><button type="button">4</button></td>
+                    <td class="calendar__date"><button type="button">5</button></td>
                   </tr>
                 </table>
-                <button class="button" type="button">Следующий шаг</button>
+                <button class="add-plan__link-next" type="button">Следующий шаг</button>
               </li>
               <li class="add-plans__item slider__item">Шаг 2<br>Маршрут
-                <p>Укажите страны, которые вы хотели бы посетить. Это может быть одна или сразу несколько.</p>
-                <select name="country">
-                  <option value="Bosnia">Босния и Герцеговина</option>
-                </select><br><br>
-                <select name="country">
-                  <option value="Czech">Чехословакия</option>
-                </select><br><br>
-                <select name="country">
-                  <option value disabled selected class="hidden" style="display:none">Выберите страну</option>
-                </select><br><br>
+                <p class="slider__text">Укажите страны, которые вы хотели бы посетить. Это может быть одна или сразу несколько.</p>
+                <ul class="country-select__list">
+                  <li>
+                    <select name="country">
+                      <option value="bosnia">Босния и Герцеговина</option>
+                    </select>
+                    <button class="dropdown-button"></button>
+                    <img class="flag" src="https://via.placeholder.com/35x24" alt="Босния и Герцеговина">
+                  </li>
+                  <li>
+                    <select name="country">
+                      <option value="czech">Чехия</option>
+                    </select>
+                    <button class="dropdown-button"></button>
+                    <img class="flag" src="https://via.placeholder.com/35x24" alt="Чехия">
+                  </li>
+                  <li>
+                    <select name="country">
+                      <option value="Выберите страну" disabled selected>Выберите страну</option>
+                    </select>
+                    <button class="dropdown-button"></button>
+                  </li>
+                </ul>
+
                 <div class="modal">
                   <table class="modal__table">
                     <caption class="modal__title">Выберите страну</caption>
@@ -200,28 +246,34 @@
                     </tr>
                   </table>
                   <ul class="modal__list">
-                    <li><button type="button">Афганистан</button></li>
-                    <li><button type="button">Албания</button></li>
-                    <li><button type="button">Алжир</button></li>
-                    <li><button type="button">Андорра</button></li>
-                    <li><button type="button">Аргентина</button></li>
-                    <li><button type="button">Армения</button></li>
-                    <li><button type="button">Австралия</button></li>
-                    <li><button type="button">Австрия</button></li>
-                    <li><button type="button">Азербайджан</button></li>
+                    <li><a href="#">Афганистан</a></li>
+                    <li><a href="#">Албания</a></li>
+                    <li><a href="#">Алжир</a></li>
+                    <li><a href="#">Андорра</a></li>
+                    <li><a href="#">Аргентина</a></li>
+                    <li><a href="#">Армения</a></li>
+                    <li><a href="#">Австралия</a></li>
+                    <li><a href="#">Австрия</a></li>
+                    <li><a href="#">Азербайджан</a></li>
                   </ul><br>
                 </div>
-                <button class="button add-plans__button" type="button">Добавить страну</button><br><br>
-                <button class="button" type="button">Следующий шаг</button><br>
-                <button class="button button-back" type="button">На шаг назад</button>
+                <button class="button add-plans__button" type="button">Добавить страну</button>
+                <button class="add-plan__link-next" type="button">Следующий шаг</button>
+                <button class="add-plan__link-previous" type="button">На шаг назад</button>
               </li>
               <li class="add-plans__item slider__item">Шаг 3<br>Развлечения
-                <p>наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить теги.</p>
-                <p>Босния и Герцеговина</p>
-                <textarea name="Bosnia-action-plan" rows="10" placeholder="План действий"></textarea><br>
-                <p>Чехословакия</p>
-                <textarea name="Czech-action-plan" rows="10">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.</textarea><br>
-                <button class="button" type="submit">Отправить</button>
+                <p class="slider__text">наконец, расскажите о своих планах времяпровождения. Можно писать в свободной форме и ставить теги.</p>
+                <div>
+                  <label for="bosnia-plan">Босния и Герцеговина</label>
+                  <img class="flag" src="https://via.placeholder.com/35x24" alt="Босния и Герцеговина">
+                </div>
+                <textarea class="slider__textarea" name="bosnia-action-plan" rows="10" placeholder="План действий" id="bosnia-plan"></textarea><br>
+                <div>
+                  <label for="czech-plan">Чехия</label>
+                  <img class="flag" src="https://via.placeholder.com/35x24" alt="Чехия">
+                </div>
+                <textarea class="slider__textarea" name="czech-action-plan" rows="10" id="czech-plan">Пить пиво и лазить по старым замкам, наслаждаться архитектурой и вот это все.</textarea><br>
+                <button class="add-plans__button button" type="submit">Отправить</button>
                 <button class="button button-back" type="button">На шаг назад</button>
               </li>
             </ul>
